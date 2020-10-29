@@ -1,12 +1,12 @@
 package com.java.automation.lab.fall.tovstyka.core22.domain;
 
 
-import interf.Adding;
-import interf.Counting;
+import com.java.automation.lab.fall.tovstyka.core22.domain.interf.Adding;
+import com.java.automation.lab.fall.tovstyka.core22.domain.interf.Counting;
 
 import java.math.BigDecimal;
 
-public class TourOperator implements Adding, Counting {
+public class TourOperator implements Adding {
     private String name;
     private String location;
     private BigDecimal undervaluation;
@@ -23,12 +23,7 @@ public class TourOperator implements Adding, Counting {
                 packageTour.getUndervaluation());
     }
 
-    @Override
-    public BigDecimal count() {
-        BigDecimal result;
-        result = undervaluation.multiply(packageTour.count());
-        return result;
-    }
+
 
     @Override
     public void add() {

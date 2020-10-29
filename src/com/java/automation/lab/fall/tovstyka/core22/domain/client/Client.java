@@ -1,6 +1,6 @@
 package com.java.automation.lab.fall.tovstyka.core22.domain.client;
 
-import Enumeration.Privileges;
+import com.java.automation.lab.fall.tovstyka.core22.domain.Enumeration.Privileges;
 import com.java.automation.lab.fall.tovstyka.core22.domain.PackageTour;
 
 import java.math.BigDecimal;
@@ -13,22 +13,16 @@ public class Client  {
     private long id;
     private BigDecimal budget;
 PackageTour packageTour;
-    private BigDecimal countThePrice() {
+    private BigDecimal countThePrice(Privileges promocode) {
         BigDecimal result;
-        result = packageTour.count();
+        BigDecimal res;
+        BigDecimal one = new BigDecimal("1");
+        res = one.subtract(promocode.getDis());
+        result = packageTour.count().multiply(res);
         return result;
     }
 
     private int booking() { return 0; }
-
-    private BigDecimal usePromocode(Privileges promocode) {
-        BigDecimal res;
-        BigDecimal result;
-        BigDecimal one = new BigDecimal("1");
-        res = one.subtract(promocode.getDis());
-        result = res.multiply(countThePrice());
-        return result;
-    }
 
     Client(String name, String location, Privileges promocode,int age,long id, BigDecimal budget) {
         this.name = name;

@@ -1,22 +1,15 @@
 package com.java.automation.lab.fall.tovstyka.core22.domain.placeForLiving;
 
-import interf.Counting;
+import com.java.automation.lab.fall.tovstyka.core22.domain.interf.Counting;
 
 import java.math.BigDecimal;
 
-public class Resort extends Hotel implements Counting {
-    private String name;
-    private String location;
-    private BigDecimal priceADay;
-    private BigDecimal duration;
+public class Resort extends Hotel{
+
     private String distanceToSea;
-    @Override
-    public BigDecimal count() {
-        BigDecimal res = priceADay.multiply(duration);
-        return res;
-    }
-    Resort(String name,String location,BigDecimal priceADay,BigDecimal duration,String distanceToSea){
-        super(name, location, priceADay, duration);
+
+    Resort(String name,String location,BigDecimal priceADay,int numberOfVacantSeats,String distanceToSea){
+        super(name, location, priceADay, numberOfVacantSeats);
         this.distanceToSea=distanceToSea;
     }
 
@@ -39,11 +32,11 @@ public class Resort extends Hotel implements Counting {
     public void setPriceADay(BigDecimal price) {
         this.priceADay = priceADay;
     }
-    public BigDecimal getDuration() {
-        return duration;
+    public int getNumberOfVacantseats() {
+        return numberOfVacantseats;
     }
-    public void setDuration(BigDecimal duration) {
-        this.duration = duration;
+    public void setCheck(int numberOfVacantseats) {
+        this.numberOfVacantseats = numberOfVacantseats;
     }
 
     public String getDistanceToSea() {

@@ -1,13 +1,11 @@
 package com.java.automation.lab.fall.tovstyka.core22.domain.excursions;
 
-import interf.Counting;
+import com.java.automation.lab.fall.tovstyka.core22.domain.interf.Counting;
 
 import java.math.BigDecimal;
 
-public class SightseeingExcursion extends TourProg implements Counting {
-    private String name;
-    private BigDecimal price;
-    private String location;
+public class SightseeingExcursion extends TourProg {
+    
     private boolean check;
 
     @Override

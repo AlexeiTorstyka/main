@@ -1,33 +1,17 @@
 package com.java.automation.lab.fall.tovstyka.core22.domain.transport;
 
-import interf.Counting;
+import com.java.automation.lab.fall.tovstyka.core22.domain.interf.Counting;
 
 import java.math.BigDecimal;
 
-public class Train extends Transport implements Counting {
-    private String name;
-    private String startPoint;
-    private BigDecimal distance;
-    private BigDecimal pricePerMile;
-    private boolean check;
+public class Train extends Transport {
+
     private long trainId;
-
-
-    @Override
-    public BigDecimal count() {
-        BigDecimal res = distance.multiply(pricePerMile);
-        return res;
-    }
-
-
     Train(String name,String startPoint,BigDecimal distance,BigDecimal pricePerMile,boolean check,long trainId){
         super(name,startPoint,distance,pricePerMile,check);
         this.trainId=trainId;
 
     }
-
-    public long getTrainId(){return trainId;}
-    public void setTrainId(long trainId){this.trainId = trainId;}
 
     public String getName() {
         return name;
@@ -63,4 +47,5 @@ public class Train extends Transport implements Counting {
     public void setCheck(boolean check) {
         this.check = check;
     }
+
 }

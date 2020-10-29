@@ -1,27 +1,18 @@
 package com.java.automation.lab.fall.tovstyka.core22.domain.placeForLiving;
 
-import interf.Counting;
+import com.java.automation.lab.fall.tovstyka.core22.domain.interf.Counting;
 
 import java.math.BigDecimal;
 
-public class BuisnesHotel extends Hotel implements Counting {
-    private String name;
-    private String location;
-    private BigDecimal duration;
+public class BuisnesHotel extends Hotel {
     private long id;
-    private BigDecimal priceADay;
-    private boolean check;
-
-    @Override
-    public BigDecimal count() {
-        return priceADay.multiply(duration);
-    }
 
 
-    BuisnesHotel(String name,String location, BigDecimal priceADay, BigDecimal duration,long id, boolean check) {
-    super(name, location, priceADay, duration);
+
+    BuisnesHotel(String name,String location, BigDecimal priceADay,int numberOfVacantseats, long id) {
+    super(name, location, priceADay,numberOfVacantseats );
     this.id=id;
-    this.check=check;
+
     }
 
     public void setName(String name) {
@@ -32,20 +23,12 @@ public class BuisnesHotel extends Hotel implements Counting {
         this.location = location;
     }
 
-    public void setDuration(BigDecimal duration) {
-        this.duration = duration;
-    }
-
     public void setId(long id) {
         this.id = id;
     }
 
     public void setPriceADay(BigDecimal priceADay) {
         this.priceADay = priceADay;
-    }
-
-    public void setCheck(boolean check) {
-        this.check = check;
     }
 
     public String getName() {
@@ -56,8 +39,11 @@ public class BuisnesHotel extends Hotel implements Counting {
         return location;
     }
 
-    public BigDecimal getDuration() {
-        return duration;
+    public int getNumberOfVacantseats() {
+        return numberOfVacantseats;
+    }
+    public void setCheck(int numberOfVacantseats) {
+        this.numberOfVacantseats = numberOfVacantseats;
     }
 
     public long getId() {
@@ -66,9 +52,5 @@ public class BuisnesHotel extends Hotel implements Counting {
 
     public BigDecimal getPriceADay() {
         return priceADay;
-    }
-
-    public boolean isCheck() {
-        return check;
     }
 }

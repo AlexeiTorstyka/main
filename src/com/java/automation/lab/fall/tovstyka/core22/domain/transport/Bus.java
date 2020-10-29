@@ -1,11 +1,10 @@
 package com.java.automation.lab.fall.tovstyka.core22.domain.transport;
 
-import interf.Counting;
-import com.java.automation.lab.fall.tovstyka.core22.domain.Stages;
+import com.java.automation.lab.fall.tovstyka.core22.domain.interf.Counting;
 
 import java.math.BigDecimal;
 
-public class Bus implements Counting {
+public class Bus  {
     private String name;
     private String startPoint;
     private BigDecimal distance;
@@ -14,18 +13,8 @@ public class Bus implements Counting {
     private boolean check;
     private long busId;
 
-    @Override
-    public BigDecimal count() {
-        BigDecimal one = new BigDecimal("1");
-        BigDecimal r = distance.multiply(pricePerMile);
-        BigDecimal q = one.subtract(discount);
-        BigDecimal res = r.multiply(q);
-        return res;
-    }
-
     Bus(String name, String startPoint, BigDecimal distance,
         BigDecimal pricePerMile, BigDecimal discount, boolean check, long busId) {
-
         this.name = name;
         this.startPoint = startPoint;
         this.distance = distance;

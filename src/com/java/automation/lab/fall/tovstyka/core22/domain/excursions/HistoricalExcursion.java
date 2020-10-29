@@ -1,14 +1,10 @@
 package com.java.automation.lab.fall.tovstyka.core22.domain.excursions;
 
-import interf.Counting;
 
 import java.math.BigDecimal;
-import java.util.function.BiFunction;
 
-public class HistoricalExcursion extends TourProg implements Counting {
-    private String name;
-    private String location;
-    private BigDecimal price;
+public class HistoricalExcursion extends TourProg {
+
     private BigDecimal discount;
     private boolean check;
 

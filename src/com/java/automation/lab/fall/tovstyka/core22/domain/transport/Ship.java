@@ -1,22 +1,16 @@
 package com.java.automation.lab.fall.tovstyka.core22.domain.transport;
 
-import interf.Counting;
+import com.java.automation.lab.fall.tovstyka.core22.domain.interf.Counting;
 
 import java.math.BigDecimal;
 
-public class Ship implements Counting {
+public class Ship {
     private String name;
     private String startPoint;
     private BigDecimal priceADay;
     private BigDecimal days;
     private long shipId;
     private Boolean check;
-
-    @Override
-    public BigDecimal count() {
-        BigDecimal res = priceADay.multiply(days);
-        return res;
-    }
 
     Ship(String name,String startPoint,BigDecimal priceADay,BigDecimal days,long shipId,Boolean check){
         this.name=name;

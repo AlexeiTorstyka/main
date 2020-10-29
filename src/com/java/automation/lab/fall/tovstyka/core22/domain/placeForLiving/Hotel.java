@@ -1,38 +1,22 @@
 package com.java.automation.lab.fall.tovstyka.core22.domain.placeForLiving;
 
-import interf.Counting;
+import com.java.automation.lab.fall.tovstyka.core22.domain.interf.Counting;
 
 import java.math.BigDecimal;
 
-public abstract class Hotel implements Counting {
-
+public abstract class Hotel{
     String name;
     String location;
     BigDecimal priceADay;
-    BigDecimal duration;
+    int numberOfVacantseats;
 
-    BuisnesHotel buisnesHotel;
-    GuestHouse guestHouse;
-    Motel motel;
-    Resort resort;
-    Hotel(String name, String location, BigDecimal priceADay,BigDecimal duration){
+    Hotel(String name, String location, BigDecimal priceADay,int numberOfVacantseats){
         this.name = name;
         this.location = location;
         this.priceADay = priceADay;
-        this.duration = duration;
+        this.numberOfVacantseats =numberOfVacantseats;
     }
-
-    @Override
-    public BigDecimal count() {
-        BigDecimal result;
-        result = buisnesHotel.count().add(motel.count().add(guestHouse.count().add(resort.count())));
-        return result;
-    }
-
-
-
     public boolean add(){
         return true;
     }
-
 }

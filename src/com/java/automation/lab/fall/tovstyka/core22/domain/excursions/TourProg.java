@@ -1,6 +1,6 @@
 package com.java.automation.lab.fall.tovstyka.core22.domain.excursions;
 
-import interf.Counting;
+import com.java.automation.lab.fall.tovstyka.core22.domain.interf.Counting;
 
 import java.math.BigDecimal;
 

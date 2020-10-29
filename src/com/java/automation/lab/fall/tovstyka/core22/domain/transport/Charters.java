@@ -1,10 +1,10 @@
 package com.java.automation.lab.fall.tovstyka.core22.domain.transport;
 
-import interf.Counting;
+import com.java.automation.lab.fall.tovstyka.core22.domain.interf.Counting;
 
 import java.math.BigDecimal;
 
-public class Charters implements Counting{
+public class Charters {
     private String name;
     private String location;
     private long[] charterId;
@@ -16,15 +16,6 @@ public class Charters implements Counting{
     Plane plane;
     Ship ship;
 
-    @Override
-    public BigDecimal count() {
-        BigDecimal result;
-        BigDecimal r;
-        BigDecimal one = new BigDecimal("1");
-        r = one.subtract(discount);
-        result = plane.count().add(ship.count()).multiply(r);
-        return result;
-    }
 
     Charters(String name, String location, long[] charterId, BigDecimal price,
              BigDecimal discount, Plane somePlane, Ship someShip){
@@ -61,7 +52,6 @@ public class Charters implements Counting{
     public void setPrice(BigDecimal price){
         this.price = price;
     }
-
     public BigDecimal getDiscount() {
         return discount;
     }

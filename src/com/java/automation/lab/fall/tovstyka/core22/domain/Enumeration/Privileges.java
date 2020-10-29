@@ -1,4 +1,4 @@
-package Enumeration;
+package com.java.automation.lab.fall.tovstyka.core22.domain.Enumeration;
 
 import java.math.BigDecimal;
 

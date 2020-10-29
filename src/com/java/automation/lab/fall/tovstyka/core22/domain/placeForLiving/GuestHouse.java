@@ -1,26 +1,13 @@
 package com.java.automation.lab.fall.tovstyka.core22.domain.placeForLiving;
 
-import interf.Counting;
+import com.java.automation.lab.fall.tovstyka.core22.domain.interf.Counting;
 
 import java.math.BigDecimal;
 
-public class GuestHouse extends Hotel implements Counting {
-    private String name;
-    private String location;
-    private BigDecimal priceADay;
-    private BigDecimal duration;
-    private boolean check;
+public class GuestHouse extends Hotel {
 
-    @Override
-    public BigDecimal count() {
-        BigDecimal res;
-        res = priceADay.multiply(duration);
-        return res;
-    }
-
-    GuestHouse(String name,String location,BigDecimal priceADay,BigDecimal duration,boolean check){
-        super(name, location, priceADay, duration);
-        this.check=check;
+    GuestHouse(String name,String location,BigDecimal priceADay, int numberOfVacantseats){
+            super(name, location, priceADay, numberOfVacantseats);
     }
 
     public String getLocation() {
@@ -41,18 +28,11 @@ public class GuestHouse extends Hotel implements Counting {
     public void setPriceADay(BigDecimal priceADay) {
         this.priceADay = priceADay;
     }
-    public BigDecimal getDuration() {
-        return duration;
+    public int getNumberOfVacantseats() {
+        return numberOfVacantseats;
+    }
+    public void setCheck(int numberOfVacantseats) {
+        this.numberOfVacantseats = numberOfVacantseats;
     }
 
-    public void setDuration(BigDecimal duration) {
-        this.duration = duration;
-    }
-    public boolean getCheck() {
-        return check;
-    }
-
-    public void setCheck(boolean check) {
-        this.check = check;
-    }
 }

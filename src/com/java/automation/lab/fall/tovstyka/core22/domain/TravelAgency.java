@@ -20,11 +20,7 @@ public class TravelAgency {
         this.packageTour = somepackageTour;
         this.tourOperator =sometourOperator;
     }
-    private BigDecimal calculation(BigDecimal undervaluation){
-        BigDecimal result;
-        result = undervaluation.multiply(tourOperator.packageTour.count());
-        return  result;
-    }
+
     public String getName() {
         return name;
     }

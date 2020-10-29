@@ -1,14 +1,12 @@
 package com.java.automation.lab.fall.tovstyka.core22.domain.excursions;
 
-import interf.Counting;
+import com.java.automation.lab.fall.tovstyka.core22.domain.interf.Counting;
 
 import java.math.BigDecimal;
 
-public class ThematicExcursion extends TourProg implements Counting {
-    private String name;
-    private String location;
-    private BigDecimal price;
-    private boolean check;
+public class ThematicExcursion extends TourProg {
+
+
     private BigDecimal rebate;
 
 
@@ -19,9 +17,8 @@ public class ThematicExcursion extends TourProg implements Counting {
         return result;
     }
 
-    ThematicExcursion(String name,String location,BigDecimal price,boolean check, BigDecimal rebate){
+    ThematicExcursion(String name,String location,BigDecimal price, BigDecimal rebate){
         super(name, location, price);
-        this.check=check;
         this.rebate = rebate;
     }
 
@@ -42,11 +39,5 @@ public class ThematicExcursion extends TourProg implements Counting {
     }
     public void setPrice(BigDecimal price) {
         this.price = price;
-    }
-    public boolean getCheck() {
-        return check;
-    }
-    public void setCheck(boolean check) {
-        this.check = check;
     }
 }

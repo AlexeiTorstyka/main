@@ -1,21 +1,15 @@
 package com.java.automation.lab.fall.tovstyka.core22.domain.transport;
 
-import interf.Counting;
+import com.java.automation.lab.fall.tovstyka.core22.domain.interf.Counting;
 
 import java.math.BigDecimal;
 
-public class Plane implements Counting{
+public class Plane {
     private String name;
     private String startPoint;
     private String serviceClass;
     private BigDecimal price;
     private long planeId;
-
-
-    @Override
-    public BigDecimal count(){
-        return price;
-    }
 
     Plane(String name,String startPoint,String serviceClass,BigDecimal price,long planeId){
         this.name=name;

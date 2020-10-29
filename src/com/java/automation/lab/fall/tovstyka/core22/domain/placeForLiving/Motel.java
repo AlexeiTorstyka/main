@@ -1,35 +1,15 @@
 package com.java.automation.lab.fall.tovstyka.core22.domain.placeForLiving;
 
-import interf.Counting;
-
 import java.math.BigDecimal;
 
-public class Motel extends Hotel implements Counting {
-    private String name;
-    private String location;
-    private BigDecimal priceADay;
+public class Motel extends Hotel{
+
     private BigDecimal discount;
-    private BigDecimal duration;
 
-
-    public BigDecimal count() {
-        BigDecimal res;
-        BigDecimal d;
-        BigDecimal result;
-        BigDecimal one = new BigDecimal("1");
-        res = priceADay.multiply(duration);
-        d = one.subtract(discount);
-        result = res.multiply(d);
-        return result;
-    }
-
-
-
-    Motel(String name,String location,BigDecimal priceADay,BigDecimal duration,BigDecimal discount){
-        super(name, location, priceADay, duration);
+    Motel(String name,String location,BigDecimal priceADay,int numberOfVacantseats,BigDecimal discount){
+        super(name, location, priceADay, numberOfVacantseats);
         this.discount=discount;
     }
-
     public String getName() {
         return name;
     }
@@ -42,7 +22,6 @@ public class Motel extends Hotel implements Counting {
     public void setLocation(String location) {
         this.location = location;
     }
-
     public BigDecimal getPriceADay() {
         return priceADay;
     }
@@ -55,10 +34,12 @@ public class Motel extends Hotel implements Counting {
     public void setDiscount(BigDecimal discount) {
         this.discount = discount;
     }
-    public BigDecimal getDuration() {
-        return duration;
+    public int getNumberOfVacantseats() {
+        return numberOfVacantseats;
     }
-    public void setDuration(BigDecimal duration) {
-        this.duration = duration;
+    public void setCheck(int numberOfVacantseats) {
+        this.numberOfVacantseats = numberOfVacantseats;
     }
+
+
 }

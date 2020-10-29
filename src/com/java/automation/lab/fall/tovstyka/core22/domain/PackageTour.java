@@ -1,15 +1,14 @@
 package com.java.automation.lab.fall.tovstyka.core22.domain;
 
-import com.java.automation.lab.fall.tovstyka.core22.domain.excursions.ThematicExcursion;
 import com.java.automation.lab.fall.tovstyka.core22.domain.transport.Transport;
 import com.java.automation.lab.fall.tovstyka.core22.domain.placeForLiving.Hotel;
 import com.java.automation.lab.fall.tovstyka.core22.domain.excursions.TourProg;
-import interf.Adding;
-import interf.Counting;
+import com.java.automation.lab.fall.tovstyka.core22.domain.interf.Adding;
+import com.java.automation.lab.fall.tovstyka.core22.domain.interf.Counting;
 
 import java.math.BigDecimal;
 
-public class PackageTour implements Counting, Adding {
+public class PackageTour implements  Adding {
     private long[] packageTourListId;
     private long[] tourProhId;
     private long[] hotelId;
@@ -33,12 +32,7 @@ public class PackageTour implements Counting, Adding {
         this.tourProg = someTourProg;
     }
 
-    @Override
-    public BigDecimal count() {
-        BigDecimal result;
-        result = undervaluation.multiply(transport.count().add(tourProg.count().add(hotel.count())));
-        return null;
-    }
+
 
     @Override
     public void add() {

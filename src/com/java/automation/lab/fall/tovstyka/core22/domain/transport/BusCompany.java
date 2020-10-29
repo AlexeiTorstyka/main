@@ -1,11 +1,10 @@
 package com.java.automation.lab.fall.tovstyka.core22.domain.transport;
 
-import Enumeration.Privileges;
-import interf.Counting;
+import com.java.automation.lab.fall.tovstyka.core22.domain.interf.Counting;
 
 import java.math.BigDecimal;
 
-public class BusCompany implements Counting {
+public class BusCompany {
     private String name;
     private String location;
     private long[] busId;
@@ -24,12 +23,6 @@ public class BusCompany implements Counting {
         this.bus = someBus;
     }
 
-    @Override
-    public BigDecimal count() {
-        BigDecimal result;
-        result = undervaluation.multiply(bus.count());
-        return result;
-    }
 
     public String getName() {
         return name;
